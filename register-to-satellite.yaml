@@ -1,0 +1,20 @@
+---
+- hosts: all
+  gather_facts: false
+  tasks:
+  - name: Configure system to connect to Satellite instead of RHSM
+    dnf:
+      name: http://{{satellite_fqdn}}/pub/katello-ca-consumer-latest.noarch.rpm
+      state: latest
+      disable_gpg_check: yes
+    vars:
+    - satellite_fqdn: satellite.tonyjames.lab
+  - name: Register to Satellite using an activation key
+    redhat_subscription:
+      state: present
+      activationkey: Demo
+      org_id: Default_Organization
+  - name: Install katello-agent
+    dnf:
+      name: katello-agent
+      state: latest

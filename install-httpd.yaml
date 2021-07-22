@@ -2,14 +2,16 @@
 - hosts: all
   gather_facts: false
   tasks:
-  become: true
-  become_user: root
   - name: Install httpd package
     ansible.builtin.package:
       name: httpd
       state: latest
+    become: true
+    become_user: root
   - name: Start httpd service
     ansible.builtin.service:
       name: httpd
       state: started
       enabled: yes
+    become: true
+    become_user: root

@@ -8,6 +8,12 @@
       state: latest
     become: true
     become_user: root
+  - name: latest index.html file is present
+    copy:
+      dest: /var/www/html/index.html
+      content: |
+        Hi, the Apache server is working
+        Have a good day!
   - name: Start httpd service
     ansible.builtin.service:
       name: httpd

@@ -12,7 +12,7 @@
     copy:
       dest: /var/www/html/index.html
       content: |
-        Hi, the Apache server is working
+        Hi, the Apache server is working.
         Have a good day!
   - name: Start httpd service
     ansible.builtin.service:

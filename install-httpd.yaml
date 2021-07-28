@@ -14,6 +14,8 @@
       content: |
         Hi, the Apache server is working.
         Have a good day!
+    become: true
+    become_user: root
   - name: Start httpd service
     ansible.builtin.service:
       name: httpd

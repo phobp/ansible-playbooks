@@ -1,0 +1,10 @@
+---
+- hosts: all
+  gather_facts: false
+  tasks:
+  - name: Install httpd package
+    ansible.builtin.package:
+      name: httpd
+      state: absent
+    become: true
+    become_user: root

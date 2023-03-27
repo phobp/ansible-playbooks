@@ -6,5 +6,5 @@
   tasks:
     - name: Create text file
       copy:
-        content: "node 1 is currently off"
+        content: "node 1 is currently off"\n
         dest: ./node1-status.txt

@@ -10,4 +10,4 @@
 
     - name: Print httpd status
       debug:
-        var: httpd_status.stdout_lines | select('match', 'httpd')
+        var: httpd_status.stdout_lines

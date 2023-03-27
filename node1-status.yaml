@@ -7,4 +7,4 @@
     - name: Create text file
       copy:
         content: "node 1 is currently off"
-        dest: "./node1-status.yaml"
+        dest: "./node1-status.txt"

@@ -1,8 +1,6 @@
 ---
 - name: Create text file on local machine
   hosts: localhost
-  gather_facts: no
-
   tasks:
     - name: Create text file
       copy:

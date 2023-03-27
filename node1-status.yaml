@@ -1,6 +1,6 @@
 ---
 - name: Create text file on local machine
-  hosts: localhost
+  hosts: bpho.lab.com
   gather_facts: no
 
   tasks:

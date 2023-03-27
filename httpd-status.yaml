@@ -10,6 +10,4 @@
 
     - name: Print httpd packages
       debug:
-        msg: "{{ item }}"
-      loop: "{{ httpd_status.stdout_lines }}"
-      when: item is search('^httpd')
+        var: httpd_status.stdout_lines

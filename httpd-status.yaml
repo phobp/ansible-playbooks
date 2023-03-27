@@ -8,6 +8,8 @@
       register: httpd_status
       ignore_errors: yes
 
-    - name: Print httpd status
+    - name: Print httpd packages
       debug:
-        var: httpd_status.stdout_lines
+        msg: "{{ item }}"
+      loop: "{{ httpd_status.stdout_lines }}"
+      when: item is search('^httpd')

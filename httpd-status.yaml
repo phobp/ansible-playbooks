@@ -1,0 +1,13 @@
+---
+- name: Check if httpd is installed
+  hosts: all
+  become: true
+  tasks:
+    - name: Check if httpd is installed
+      command: rpm -qa | grep httpd
+      register: httpd_status
+      ignore_errors: yes
+
+    - name: Print httpd status
+      debug:
+        var: httpd_status.stdout_lines

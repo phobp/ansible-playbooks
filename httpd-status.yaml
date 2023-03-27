@@ -7,20 +7,10 @@
       command: rpm -qa | grep httpd
       register: httpd_status
       ignore_errors: yes
-
-    - name: Check if httpd is running
-      systemd:
-        name: httpd
-        state: started
-        enabled: yes
-      register: httpd_service
       
     - name: Print httpd status
       debug:
         msg: >-
           {{
-            "Installed: " + httpd_status.stdout_lines[0] if httpd_status.rc == 0 else "Not Installed"
-          }}
-          {{
-            "Running: " + httpd_service.state if httpd_service.changed else "Not Running"
+            "httpd installed" + httpd_status.stdout_lines[0] if httpd_status.rc == 0 else "httpd not Installed"
           }}

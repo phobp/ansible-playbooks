@@ -1,6 +1,6 @@
 ---
 - name: Create text file on local machine
-  hosts: localhost
+  hosts: all
   tasks:
     - name: Create text file
       copy:

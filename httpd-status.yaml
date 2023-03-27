@@ -12,5 +12,5 @@
       debug:
         msg: >-
           {{
-            "httpd installed" + httpd_status.stdout_lines[0] if httpd_status.rc == 0 else "httpd not Installed"
+            "httpd installed" if httpd_status.rc == 0 else "httpd not Installed"
           }}

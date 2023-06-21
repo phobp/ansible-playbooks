@@ -1,0 +1,9 @@
+---
+- name: Configure Apache web server
+  hosts: all
+  tasks:
+    - name: Copy index.html file
+      become: true
+      copy:
+        content: "<html><body><h1>Hello</h1></body></html>"
+        dest: /var/www/html/index.html

@@ -5,5 +5,5 @@
     - name: Copy index.html file
       become: true
       copy:
-        content: "<html><body><h1>Hello</h1></body></html>"
+        content: "<html><body><h1>Hello, it's your conscience speaking. We don't talk much.</h1></body></html>"
         dest: /var/www/html/index.html

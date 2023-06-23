@@ -1,6 +1,6 @@
 ---
 - name: Remove index.html file
-  hosts: your_remote_host
+  hosts: all
   become: true
   tasks:
     - name: Remove index.html file

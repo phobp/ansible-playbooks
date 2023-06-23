@@ -5,5 +5,5 @@
   tasks:
     - name: Remove index.html file
       file:
-        path: /path/to/index.html
+        path: /var/www/html/index.html
         state: absent

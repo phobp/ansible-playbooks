@@ -1,0 +1,9 @@
+---
+- name: Remove index.html file
+  hosts: your_remote_host
+  become: true
+  tasks:
+    - name: Remove index.html file
+      file:
+        path: /path/to/index.html
+        state: absent
